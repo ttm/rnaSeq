@@ -51,6 +51,10 @@ maior valor: 0.99999999, menor valor: 0.95276637)
 (5 milhões mais próximos de -1, coeficiente de Pierson,
 menor valor: -0.99999999, maior valor: -0.946776814)
 
+Estes arquivos estão compactados como ".tar.bz2" pois
+passam do limite do github de 100MB
+(estão com mais de 250MB depois de descompactados).
+
 O formato da escrita apresenta as linhas numeradas desconsiderando
 as linhas que não batem entre os arquivos,
 depois as linhas como numeradas nos arquivos originais,
