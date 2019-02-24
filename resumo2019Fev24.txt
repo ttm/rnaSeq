@@ -1,0 +1,86 @@
+~ Resumo da análise preliminar ~
+
+
+~~ Consistência dos dados ~~
+Nos arquivos:
+    'HER+ X CONTROL tudo.xls',
+    'HER+ X LUMINAL HER tudo.xls',
+    'LUMINAL A X CONTROLE FINAL total.xls',
+    'LUMINAL HER X CONTROL total.xls',
+    'LUMINAL HER X LUMINAL total.xls',
+    'TN X CONTROLE total .xls',
+    'TN x HER tudo.xls'
+
+Há 185 linhas que não batem na coluna RefSeq.
+
+Constam no arquivo:
+-> rows_mismatch.txt
+com a coluna seguida dos valores encontrados.
+
+
+Nos de comparação com grupo de controle:
+    'HER+ X CONTROL tudo.xls',
+    'LUMINAL A X CONTROLE FINAL total.xls',
+    'LUMINAL HER X CONTROL total.xls',
+    'TN X CONTROLE total_.xls',
+
+há 106 linhas que não batem na coluna RefSeq.
+
+
+~~ Valores máximos e mínimos ~~
+Para cada arquivo XLS, foi escrito um TXT com os 20 maiores
+e os 20 menores valores da coluna Fold-Change, assim como os
+números de suas colunas.
+Os arquivos TXT possuem mesmo nome que o arquivo XLS eum sufixo ".txt".
+
+
+~~ Correlação entre as linhas ~~
+Todos estes arquivos possuem 17633 linhas,
+resultando em 155 461 345 pares de linhas.
+Removendo as linhas que não estão com as referências
+consistentes, nos arquivos de comparação com os grupos
+de controle, há 153 597 865 pares de linhas, para as quais
+as correlaçòes foram calculadas.
+
+Os pares mais correlacionados estão nos
+arquivos:
+-> correlacoes_max.txt
+(5 milhões mais próximos de 1, coeficiente de Pierson,
+maior valor: 0.99999999, menor valor: 0.95276637)
+-> correlacoes_min.txt
+(5 milhões mais próximos de -1, coeficiente de Pierson,
+menor valor: -0.99999999, maior valor: -0.946776814)
+
+O formato da escrita apresenta as linhas numeradas desconsiderando
+as linhas que não batem entre os arquivos,
+depois as linhas como numeradas nos arquivos originais,
+depois o coeficiente de correlação.
+
+Observe que estas correlações foram calculadas com apenas 4 valores
+para cada linha.
+
+
+~~ Scripts e demais arquivos ~~
+
+-> 00LeituraXLS_maxmin.py
+script minimo para leitura de um XLS e cálculo dos valores máximos e mínimos da coluna de Fold-Change.
+
+-> 01todosMaxMin.py
+escrita dos arquivos TXT com os valores máximos e mínimos de todos os XLSs.
+
+-> 02rowsMismatch.py
+observação das linhas cuja coluna RefSeq não coincidem. Escrita do arquivo
+rows_mismatch.txt
+
+-> 03correlation.py
+encontra as correlações e escreve elas no binário
+"correlation.pickle" (não enviado para o repositório pois são 2,5GB).
+
+-> 04argSort.py
+encontrada ordenação das correlações pelos índices (para posterior localização das linhas), escreve o binário "argsort.pickle"
+(não enviado para o repositório pois são 2,5GB).
+
+-> 05writeCorrelationMaxMin.py
+encontra e escreve os valores de maior e menor correlação.
+
+:::
