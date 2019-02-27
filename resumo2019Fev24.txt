@@ -32,6 +32,8 @@ Para cada arquivo XLS, foi escrito um TXT com os 20 maiores
 e os 20 menores valores da coluna Fold-Change, assim como os
 números de suas colunas.
 Os arquivos TXT possuem mesmo nome que o arquivo XLS eum sufixo ".txt".
+Os arquivos TXT com sufixo "_RefSeq.txt" utilizam os valores RefSeq ao invés
+da numeração das linhas para identificação das expressões dos genes.
 
 
 ~~ Correlação entre as linhas ~~
@@ -60,6 +62,10 @@ as linhas que não batem entre os arquivos,
 depois as linhas como numeradas nos arquivos originais,
 depois o coeficiente de correlação.
 
+Nos arquivos de nome igual, ams com terminação "_RefSeq.txt"
+são utilizados os valores da coluna RefSeq para identificação
+das expressões do genes (ao invés dos números das linhas).
+
 Observe que estas correlações foram calculadas com apenas 4 valores
 para cada linha.
 
@@ -86,5 +92,11 @@ encontrada ordenação das correlações pelos índices (para posterior localiza
 
 -> 05writeCorrelationMaxMin.py
 encontra e escreve os valores de maior e menor correlação.
+
+-> 06histCorrelations.py
+faz as figuras dos histogramas das correlações das expressões.
+
+-> 07histFold.py
+faz as figuras dos histogramas das expressões para cada XLS.
 
 :::
