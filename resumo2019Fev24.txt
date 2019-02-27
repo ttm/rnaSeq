@@ -70,6 +70,12 @@ Observe que estas correlações foram calculadas com apenas 4 valores
 para cada linha.
 
 
+~~ Histogramas de correlação e expressão (fold) ~~
+Histogramas dos valores de fold de cada arquivo e das correlações dos valores
+de fold estão nos PNGs com nomes associados a cada arquivo e com nome
+hist_cor_X.png, onde X é 10, 100 ou 1000, indicando a resolução do histograma.
+
+
 ~~ Scripts e demais arquivos ~~
 
 -> 00LeituraXLS_maxmin.py
